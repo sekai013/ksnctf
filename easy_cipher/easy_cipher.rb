@@ -1,6 +1,6 @@
 require 'pathname'
 
-class Caesal
+class Caesar
 
 	def initialize(cipher_text)
 		@cipher_text = cipher_text
@@ -43,8 +43,8 @@ print 'Enter path to ciphertext: '
 pathname = Pathname.new(gets.chomp).expand_path
 if pathname.file?
 	begin
-		caesal = Caesal.new File.read pathname.to_path
-		caesal.run
+		caesar = Caesar.new File.read pathname.to_path
+		caesar.run
 	rescue => e
 		puts e.message
 	end
